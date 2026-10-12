@@ -6,7 +6,7 @@ URL = "http://10.51.54.130:81/stream"
 cam = cv2.VideoCapture(URL)
 
 
-def getImage(URL) :
+def getImage() :
     read = 1
     read, image = cam.read()
     while (read):
