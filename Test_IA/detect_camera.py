@@ -4,7 +4,8 @@ from ultralytics import YOLO
 #model = YOLO("yolo11n.pt")   # se télécharge tout seul au premier lancement
 #model = YOLO("runs/detect/train-2/weights/best.pt")
 model = YOLO("best_1h.pt") 
-cap = cv2.VideoCapture(0)    # 0 = webcam du PC
+url = "http://10.51.54.130:81/stream"
+cap = cv2.VideoCapture(url) # 0 = webcam du PC
 
 while True:
     ok, frame = cap.read()
