@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MultiVisio Alerte</string>
+    <string name="etat_connexion">Connexion à Firebase…</string>
+    <string name="etat_pret">Prêt : tu recevras une alerte si un drone est détecté.</string>
+    <string name="etat_erreur">Impossible de s\'abonner aux alertes. Vérifie Internet et le fichier google-services.json.</string>
+    <string name="etat_notifs_refusees">Notifications refusées : active-les dans les réglages du téléphone.</string>
+    <string name="titre_derniere_alerte">Dernière alerte :</string>
+    <string name="aucune_alerte">Aucune alerte pour l\'instant.</string>
+    <string name="canal_nom">Alertes drone</string>
+    <string name="notif_titre">⚠️ Drone détecté !</string>
+</resources>

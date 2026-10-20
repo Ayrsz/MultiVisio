@@ -1,0 +1,9 @@
+.gradle/
+.idea/
+.kotlin/
+build/
+local.properties
+*.iml
+captures/
+# Fichier propre à ton projet Firebase : on ne le met pas sur GitHub
+app/google-services.json
