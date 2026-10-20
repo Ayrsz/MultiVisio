@@ -20,13 +20,13 @@ ESP32-CAM ──image──▶ PC (Python + YOLO) ──« drone ! »──▶ F
 
 | Dossier / fichier | À quoi il sert |
 |---|---|
-| `android-app/` | Le projet à ouvrir dans Android Studio |
+| `MultiVisio/android-app/` | Le projet à ouvrir dans Android Studio |
 | `android-app/app/src/main/java/.../MainActivity.kt` | L'écran de l'appli |
 | `android-app/app/src/main/java/.../AlerteService.kt` | Reçoit l'alerte, même appli fermée |
 | `android-app/app/src/main/java/.../Notifications.kt` | Affiche la notification |
-| `python/alerte_drone.py` | La fonction `envoyer_alerte()` côté PC |
-| `python/envoyer_alerte_test.py` | Envoie une fausse alerte pour tester |
-| `python/detect_et_alerte.py` | Ton `detect_camera.py` + l'envoi de l'alerte |
+| `ai-service/alerte_drone.py` | La fonction `envoyer_alerte()` côté PC |
+| `ai-service/envoyer_alerte_test.py` | Envoie une fausse alerte pour tester |
+| `ai-service/detect_et_alerte.py` | Ton `detect_camera.py` + l'envoi de l'alerte |
 
 ---
 
@@ -39,10 +39,11 @@ ESP32-CAM ──image──▶ PC (Python + YOLO) ──« drone ! »──▶ F
 
 ## Étape 2 : ouvrir le projet
 
-1. Copie le dossier `multivisio-alerte` sur ton PC (par exemple dans
-   `Documents\MultiVisio`).
-2. Dans Android Studio : **File > Open**, puis choisis le dossier
-   **`android-app`** (pas le dossier au-dessus).
+1. L'appli est déjà sur ton PC, dans le dossier du dépôt :
+   `Documents\MultiVisio\android-app`.
+2. Dans Android Studio : **File > Open** (ou **Open** sur l'écran d'accueil),
+   puis choisis le dossier **`MultiVisio\android-app`** (pas le dossier
+   au-dessus).
 3. Clique **Trust Project** si on te le demande.
 4. En bas, une barre de progression « Gradle sync » tourne : Android Studio
    télécharge ce dont l'appli a besoin. À la fin, **une erreur
@@ -86,13 +87,13 @@ Au lancement, accepte « Autoriser les notifications ». L'écran doit afficher
 1. Console Firebase → ⚙️ **Paramètres du projet** → onglet
    **Comptes de service** → **Générer une nouvelle clé privée**.
 2. Un fichier `.json` se télécharge. Renomme-le **`cle-firebase.json`** et
-   mets-le dans le dossier `python\`.
+   mets-le dans le dossier `MultiVisio\ai-service\`.
 3. ⚠️ Cette clé est **secrète** : ne la mets jamais sur GitHub ni dans un
    message (le fichier `.gitignore` l'exclut déjà).
 
 ## Étape 6 : premier test (sans caméra)
 
-Dans un terminal, dans le dossier `python\` :
+Dans un terminal, dans le dossier `MultiVisio\ai-service\` :
 
 ```bash
 pip install -r requirements.txt
