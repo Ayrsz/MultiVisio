@@ -1,31 +1,34 @@
+
 package com.multivisio.alerte
 
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
-/**
- * Android appelle ce service à chaque fois qu'un message Firebase arrive,
- * même si l'appli est fermée.
- */
 class AlerteService : FirebaseMessagingService() {
 
     override fun onMessageReceived(message: RemoteMessage) {
-        // Les infos envoyées par le script Python (voir ai-service/alerte_drone.py)
+        super.onMessageReceived(message)
+
         val donnees = message.data
-        Log.d("MultiVisio", "Alerte reçue : $donnees")
+
+        val heure = donnees["heure"] ?: "Heure inconnue"
+        val camera = donnees["camera"] ?: "Caméra inconnue"
+        val confiance = donnees["confiance"] ?: "0"
 
         val alerte = Alerte(
-            heure = donnees["heure"] ?: "?",
-            camera = donnees["camera"] ?: "caméra",
-            confiance = donnees["confiance"] ?: "?",
+            heure = heure,
+            camera = camera,
+            confiance = confiance
         )
+
         Historique.ajouter(this, alerte)
+
         Notifications.afficher(this, alerte.texte())
     }
 
     override fun onNewToken(token: String) {
-        // Pas utile ici : on passe par le sujet "drones", pas par le token.
-        Log.d("MultiVisio", "Nouveau token : $token")
+        super.onNewToken(token)
+        Log.d("AlerteService", "Nouveau token Firebase reçu")
     }
 }

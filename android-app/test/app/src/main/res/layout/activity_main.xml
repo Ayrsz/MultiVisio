@@ -1,88 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="#F3F5F9">
 
-    <!-- En-tête : logo + état de la connexion -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:contentDescription="@null"
-            android:src="@drawable/ic_drone" />
-
-        <TextView
-            android:id="@+id/texteEtat"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"
-            android:text="@string/etat_connexion"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <!-- Activer / couper les alertes -->
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/interrupteurAlertes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/interrupteur_alertes"
-        android:textSize="16sp" />
-
-    <!-- Boutons -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/boutonTest"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/bouton_test" />
-
-        <Button
-            android:id="@+id/boutonEffacer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:text="@string/bouton_effacer" />
-    </LinearLayout>
-
-    <!-- Historique -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/titre_historique"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/texteVide"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="@string/aucune_alerte"
-        android:textSize="16sp" />
-
-    <ListView
-        android:id="@+id/listeAlertes"
+    <!-- Zone dans laquelle les 3 pages seront affichées -->
+    <FrameLayout
+        android:id="@+id/conteneurFragments"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:layout_weight="1" />
+
+    <!-- Barre de navigation fixe en bas -->
+    <LinearLayout
+        android:id="@+id/barreNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:orientation="horizontal"
+        android:background="#142238"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:id="@+id/navAlertes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/iconeAlertes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔔"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/labelAlertes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alertes"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navCameras"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/iconeCameras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📹"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/labelCameras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Caméras"
+                android:textColor="#AAB7CA"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navDrone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/iconeDrone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🚁"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/labelDrone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drone"
+                android:textColor="#AAB7CA"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>
