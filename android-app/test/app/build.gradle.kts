@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services") // lit le fichier google-services.json
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -41,4 +42,6 @@ dependencies {
     // Firebase Cloud Messaging = le service de Google qui livre les notifications
     implementation(platform("com.google.firebase:firebase-bom:34.0.0"))
     implementation("com.google.firebase:firebase-messaging")
+
+
 }
