@@ -1,7 +1,8 @@
-// Fichier de configuration global : on déclare juste les "plugins" utilisés.
+
 plugins {
     id("com.android.application") version "8.11.1" apply false
+
     id("org.jetbrains.kotlin.android") version "2.2.0" apply false
-    id("com.google.gms.google-services") version "4.4.3" apply false
+
     id("com.google.gms.google-services") version "4.6.0" apply false
 }
