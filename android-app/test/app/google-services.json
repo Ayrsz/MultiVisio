@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "365193797705",
+    "project_id": "multivision-d1632",
+    "storage_bucket": "multivision-d1632.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365193797705:android:650c115efbf0fc08975f98",
+        "android_client_info": {
+          "package_name": "com.multivisio.alerte"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB357cwcUd60IAe6BoQcwXt1YNEpifvZwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
